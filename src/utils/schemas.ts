@@ -1,3 +1,4 @@
+import { Product } from "@prisma/client";
 import { z } from "zod";
 
 /**
@@ -11,8 +12,8 @@ export const createProductSchema = z.object({
 
 export const updateProductSchema = createProductSchema.partial()
 
-export type CreateProductType = z.infer<typeof createProductSchema>
-export type UpdateProductType = z.infer<typeof updateProductSchema>
+export type CreateProductType = Omit<Product, 'id'>
+export type UpdateProductType = Partial<CreateProductType>
 
 /**
  * Category

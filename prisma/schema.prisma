@@ -17,6 +17,7 @@ model Product {
   id    Int    @id @default(autoincrement())
   name  String @unique
   price Float
+  image String
 
   ProductsOnSales ProductsOnSales[]
 }

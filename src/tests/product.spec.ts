@@ -1,5 +1,5 @@
 import { ProductService } from '@/services/product.service'
-import { describe, it} from 'vitest'
+import { describe, expect, it} from 'vitest'
 
 const service = new ProductService()
 describe('ProductService', () => {
@@ -9,7 +9,15 @@ describe('ProductService', () => {
       name: 'Um ano netflix',
       price: 200
     })
+
+    expect(res).toHaveProperty('id')
     await service.remove(res.id)
+  })
+
+  it.only('find all', async() => {
+    const res = await service.findAll()
+
+    console.log(res)
   })
 
 })
