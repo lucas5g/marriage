@@ -7,7 +7,6 @@ export const createProductSchema = z.object({
   name: z.string(),
   price: z.number(),
   image: z.string(),
-  categoryId: z.number()
 })
 
 export const updateProductSchema = createProductSchema.partial()
