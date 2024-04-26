@@ -12,8 +12,7 @@ export const createProductSchema = z.object({
 
 export const updateProductSchema = createProductSchema.partial()
 
-export type CreateProductType = Omit<Product, 'id'>
-export type UpdateProductType = Partial<CreateProductType>
+
 
 /**
  * Category
