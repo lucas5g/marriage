@@ -5,9 +5,7 @@ export function Navbar() {
   return (
     <ul className="bg-lime-800 text-white flex gap-5 p-5">
       {menus.map(menu => {
-        const link = menu === 'Recepção'
-          ? '/'
-          : menu.normalize('NFD')
+        const link =  menu.normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '')
             .toLowerCase()
 
