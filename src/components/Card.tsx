@@ -5,7 +5,7 @@ interface Props{
 }
 export function Card({children}: Props){
   return (
-    <div>
+    <div className="bg-white">
       {children}
     </div>
   )

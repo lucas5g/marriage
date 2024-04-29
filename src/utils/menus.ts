@@ -1,4 +1,4 @@
 export const menus = [
-  'Recepção',
+  'Início',
   'Presentes'
 ]
