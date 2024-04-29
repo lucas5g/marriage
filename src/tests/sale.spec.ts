@@ -1,15 +1,13 @@
-import { ProductService } from '@/services/product.service'
-import { UpdateProductType } from '@/utils/types'
+import { SaleService } from '@/services/sale.service'
 import { describe, expect, it} from 'vitest'
 
-const service = new ProductService()
-describe('ProductService', () => {
+const service = new SaleService()
+describe('SaleService', () => {
   const properties = ['id', 'name', 'price', 'image']
-  it('create and delete', async() => {
+  it.only('create and delete', async() => {
     const res = await service.create({
-      image: 'https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg',
-      name: 'Um ano netflix',
-      price: 200
+      emailOrName: 'lucassousa19@mail.com',
+      totalPrice: 30,
     })
 
     expect(res).toHaveProperty('id')
